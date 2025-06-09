@@ -41,7 +41,7 @@
       <form
         name="pemesanan-produk"
         method="POST"
-        netlify
+        data-netlify="true"
         netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="pemesanan-produk" />
@@ -68,7 +68,7 @@
         <input type="number" id="jumlah" name="jumlah" min="1" placeholder="1" required />
 
         <label for="catatan">Catatan Tambahan</label>
-        <textarea id="catatan" name="catatan" placeholder="Tulis catatan jika ada..."></textarea>
+        <textarea id="catatan" name="catatan" placeholder="Tulis catatan jika ada..." rows="5" cols="30"></textarea>
 
         <button type="submit">Kirim Pesanan</button>
       </form>
