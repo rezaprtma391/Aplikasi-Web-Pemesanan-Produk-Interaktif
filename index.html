@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Form Pemesanan Produk</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Form Pemesanan Produk</h1>
+
+      <img
+        id="main-image"
+        src="img/blank-black-t-shirt-hanger-isolated-white-background.jpg"
+        alt="Gambar Produk"
+        class="product-image"
+      />
+
+      <div class="thumbnail-container" id="thumbnail-gallery">
+        <img
+          src="img/blank-black-t-shirt-hanger-isolated-white-background.jpg"
+          class="thumbnail"
+          data-produk="kaos"
+          title="Kaos"
+        />
+        <img
+          src="img/canvas-hat-blank-fashion-sport.jpg"
+          class="thumbnail"
+          data-produk="topi"
+          title="Topi"
+        />
+        <img
+          src="img/wiser-by-the-mile-SwWCo1k92M4-unsplash.jpg"
+          class="thumbnail"
+          data-produk="tas"
+          title="Tas"
+        />
+      </div>
+
+      <form
+        name="pemesanan-produk"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="pemesanan-produk" />
+        <!-- Honeypot untuk spam -->
+        <p style="display: none">
+          <label>Jangan diisi: <input name="bot-field" /></label>
+        </p>
+
+        <label for="nama">Nama Lengkap *</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+
+        <label for="produk">Pilih Produk *</label>
+        <select id="produk" name="produk" required>
+          <option value="" disabled selected>-- Pilih Produk --</option>
+          <option value="kaos">Kaos</option>
+          <option value="topi">Topi</option>
+          <option value="tas">Tas</option>
+        </select>
+
+        <label for="jumlah">Jumlah *</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" placeholder="1" required />
+
+        <label for="catatan">Catatan Tambahan</label>
+        <textarea id="catatan" name="catatan" placeholder="Tulis catatan jika ada..."></textarea>
+
+        <button type="submit">Kirim Pesanan</button>
+      </form>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+      <img id="modal-img" src="" alt="Gambar Produk Besar" />
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
